@@ -24,7 +24,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo Triggered Event: ${{ github.event_name }}
-          echo Current Repository: ${{ githib.repository }}
+          echo Current Repository: ${{ github.repository }}
           echo "$GITHUB_CONTEXT"
   repo_forked:
 
