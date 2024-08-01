@@ -19,15 +19,13 @@ on:
 jobs:
   github_info:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_CONTEXT: ${{ toJson(github) }}
     steps:
-      -name: Gather Info
-      run: |
-        echo Triggered Event: ${{ github.event_name }}
-        echo Current Repository: ${{ github.repository }}
-        echo "$GITHUB_CONTEXT"
-            
+      - env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo Triggered Event: ${{ github.event_name }}
+          echo Current Repository: ${{ githib.repository }}
+          echo "$GITHUB_CONTEXT"
   repo_forked:
 
     runs-on: ubuntu-latest
